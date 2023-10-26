@@ -1,0 +1,139 @@
+/* Navbar */
+body{
+  text-align: justify;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 35px;
+    margin-left: 100px;
+  }
+  
+  li {
+    float: left;
+  }
+
+  li a {
+    padding: 8px 15px;
+    font-size: large;
+    color: #000;
+    text-decoration: none;
+  }
+  .main{
+    display: flex;
+    margin-left: 150px;
+  }
+  img{
+    margin-top: 15px;
+  }
+
+  /* Carrers */
+
+  .sub-heading{
+    color: #0f62fe;
+  }
+  .content-des {
+    padding: 10px 100px 20px 100px;
+    font-size: 22px;
+    color: #777777;
+  }
+  #border1 p{
+     color: #000;
+     font-size: 16px;
+  }
+  #border1{
+    border-bottom:8px solid #FE0000 !important;
+    border-radius: 10px !important;
+  }
+  #border1 span{
+    font-size: 16px;
+    }
+  .border span{
+    font-size: 16px;
+  }
+
+
+  footer {
+    /* position: absolute;
+    bottom: -55px; */
+    width: 100%;
+    background-color: #333;
+    color:#fff;
+  }
+  /* footer */
+.footer-details{
+  background-color:#E8E8E8;
+  padding: 10px 100px 20px 100px;
+}  
+.footer-details .col-3{
+  padding: 20px;
+}
+.footer-details .col-3 img{
+  padding-left: 8px;
+}
+.footerlist p a{
+  line-height: 1rem; 
+   color: #000;
+}
+.footerlist a{
+  line-height: 1rem;
+}
+.footerlist p a:hover {
+  color: #28a745;
+}
+.footerimages img{
+    transition: transform .7s ease-in-out;
+
+}
+.footerimages img:hover{
+    transform: rotate(360deg);
+}
+
+/* 
+@keyframes slideRight {
+  from {
+    transform: translateX(-300%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-right {
+  animation: slideRight 3s ease forwards;
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  animation: slideLeft 3s ease forwards;
+} */
+
+@media screen and (max-width: 400px) {
+  .content-des {
+    padding: 15px;
+    font-size: 16px;
+
+}
+  .footerbutton{
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+    /* margin-top: 1rem; Adjust the top margin for spacing in mobile view */
+
+  }
+  .hyd,.bag{
+    width: 50%;
+  }
+  .main-content1{
+    flex-direction: column;
+    padding: 1px;
+  }
+}
+
