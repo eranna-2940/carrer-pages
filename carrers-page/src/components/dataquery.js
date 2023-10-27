@@ -31,6 +31,7 @@ query Assets {
     data5
     data6
     dataContent
+    dataDetails
     dataMiniHeading
     button1
     dep1
@@ -42,6 +43,7 @@ query Assets {
     dep7
     depHeading
     depContent
+    depDetails
     ser1
     ser2
     ser3
@@ -49,6 +51,7 @@ query Assets {
     ser5
     serHeading
     serContent
+    serDetails
     aws1
     aws2
     aws3
@@ -58,6 +61,7 @@ query Assets {
     aws7
     awsHeading
     awsContent
+    awsDetails
     app1
     app2
     app3
@@ -66,12 +70,14 @@ query Assets {
     app6
     appHeading
     appContent
+    appDetails
     cata1
     cata2
     cata3
     cata4
     catalogHeading
     catalogContent
+    catalogDetails
     hydbutton
     bagbutton
     footerImg {

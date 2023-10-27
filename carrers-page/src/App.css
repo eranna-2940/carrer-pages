@@ -71,6 +71,11 @@ ul {
 .footer-details .col-3 img{
   padding-left: 8px;
 }
+.footerContent{
+  font-size: 14px;
+  color: #777777;
+  font-weight: 400;
+}
 .footerlist p a{
   line-height: 1rem; 
    color: #000;
@@ -115,6 +120,11 @@ ul {
   animation: slideLeft 3s ease forwards;
 } */
 
+.dropdown-menu{
+  width: 15%;
+  background-color: #eed6d6;
+}
+
 @media screen and (max-width: 400px) {
   .content-des {
     padding: 15px;
@@ -128,12 +138,19 @@ ul {
     /* margin-top: 1rem; Adjust the top margin for spacing in mobile view */
 
   }
+
+  
   .hyd,.bag{
     width: 50%;
   }
   .main-content1{
     flex-direction: column;
     padding: 1px;
+  }
+  .main-content2{
+    flex-direction: column;
+    padding: 1px;
+
   }
 }
 
