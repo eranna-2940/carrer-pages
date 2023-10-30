@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/infomerica-site/static/css/main.92951548.css",
-    "main.js": "/infomerica-site/static/js/main.5e039833.js",
+    "main.css": "/infomerica-site/static/css/main.85396937.css",
+    "main.js": "/infomerica-site/static/js/main.9b7da946.js",
     "static/js/787.5bc45b3f.chunk.js": "/infomerica-site/static/js/787.5bc45b3f.chunk.js",
     "index.html": "/infomerica-site/index.html",
-    "main.92951548.css.map": "/infomerica-site/static/css/main.92951548.css.map",
-    "main.5e039833.js.map": "/infomerica-site/static/js/main.5e039833.js.map",
+    "main.85396937.css.map": "/infomerica-site/static/css/main.85396937.css.map",
+    "main.9b7da946.js.map": "/infomerica-site/static/js/main.9b7da946.js.map",
     "787.5bc45b3f.chunk.js.map": "/infomerica-site/static/js/787.5bc45b3f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.92951548.css",
-    "static/js/main.5e039833.js"
+    "static/css/main.85396937.css",
+    "static/js/main.9b7da946.js"
   ]
 }

@@ -6,6 +6,10 @@ query Assets {
     id
     subHeading
     content
+    mainMobileImg {
+      url
+    }
+  
     circleContent
     circleImg {
       url
@@ -80,6 +84,14 @@ query Assets {
     catalogDetails
     hydbutton
     bagbutton
+    hyd
+    hydExp
+    hydPos
+    banglore
+    usa
+    new {
+      url
+    }
     footerImg {
       url
     }

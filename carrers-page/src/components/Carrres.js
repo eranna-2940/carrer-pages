@@ -8,11 +8,53 @@ import 'aos/dist/aos.css';
 
  const Carrres = (props) => {
     const displaying= props.product;
-    const [isContentVisible, setIsContentVisible] = useState(false);
-    const toggleContent = () => {
-      setIsContentVisible(!isContentVisible);
-    };
+    // const [isContentVisible, setIsContentVisible] = useState(false);
+    // const [isContentVisible2, setIsContentVisible2] = useState(false);
+    // const [isContentVisible1, setIsContentVisible1] = useState(false);
+
+    // const toggleContent = () => {
+    //   setIsContentVisible(!isContentVisible);
+    //   setIsContentVisible1(isContentVisible1)
+    //   setIsContentVisible2(isContentVisible2)
+    //   // console.log(isContentVisible2)
+    // };
+    // const toggleContent1 = () => {
+    //   setIsContentVisible1(!isContentVisible1);
+    //   setIsContentVisible(isContentVisible);
+    //   setIsContentVisible2(isContentVisible2)
+
+    // };
+    // const toggleContent2 = () => {
+    //   setIsContentVisible2(!isContentVisible2);
+    //   setIsContentVisible1(isContentVisible1)
+    //   setIsContentVisible(isContentVisible);
+
+    // };
   
+const toggleclick=(selected)=>{
+  // const selected = e.currentTarget.id;
+
+  if(selected === 'hyd'){
+     document.getElementById('table1').style.display='block'
+     document.getElementById('table2').style.display='none'
+    document.getElementById('table3').style.display='none'
+
+  }else if(selected === 'bang'){
+    document.getElementById('table2').style.display='block'
+    document.getElementById('table1').style.display='none'
+    document.getElementById('table3').style.display='none'
+
+
+ }else if(selected === 'usa'){
+  document.getElementById('table3').style.display='block'
+  document.getElementById('table1').style.display='none'
+    document.getElementById('table2').style.display='none'
+
+}
+
+
+   
+}  
 
       AOS.init();
       const showModal = (e) => {
@@ -144,11 +186,8 @@ import 'aos/dist/aos.css';
           </div>
       </div>
 
-
-
-
-        <img src={displaying.url} width='100%' alt='no-display'/>
-
+        <img src={displaying.url} width='100%' alt='no-display' className='mainimg'/>
+        <img src={displaying.mainMobileImg.url}  alt='no-display' className='sunimg'/>
       <div className='content-des'>
       <h1 className='sub-heading'>{displaying.subHeading}</h1>
         <p>{displaying.content}</p>
@@ -174,24 +213,26 @@ import 'aos/dist/aos.css';
             </div>
             <br/>
             <h1 className='text-primary pb-5'>{displaying.subHeading2}<span className='text-success'>{displaying.subHeading3}</span></h1>
-            <div class="dropdown pt-100">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <div className="dropdown list">
+  <button class="btn btn-secondary dropdown-toggle fs-1 pt-10 " type="button" data-bs-toggle="dropdown">
     Dropdown button
   </button>
-  <ul class="dropdown-menu">
-    <li><button class="dropdown-item" type='button' onClick={toggleContent}>
-    {isContentVisible ? 'Hyderabad' : 'Hyderabad'}
-
-      </button></li>
-    <li><button class="dropdown-item primary" href="/">Another action</button></li>
-    <li><button class="dropdown-item" href="/">Something else here</button></li>
+  <ul class="dropdown-menu" >
+    <li><button class="dropdown-item fs-1 " type='button'  onClick={()=>toggleclick('hyd')}>
+    {/* {isContentVisible} */}
+     Hyderabad </button></li>
+    <li>
+      {/* {isContentVisible1 } */}
+      <button class="dropdown-item fs-1" type='button'  onClick={()=>toggleclick('bang')} >Banglore Openings</button></li>
+<li>
+{/* {isContentVisible2} */}
+  <button class="dropdown-item fs-1" type='button'  onClick={()=>toggleclick('usa')}>US Openings</button></li>
   </ul>
 </div>
-              <br/><br/>       
-
-  {isContentVisible && (
-        <div>
-          <table class="table border table-hover">
+  
+  
+        <div className='tableinfo' id='table1'>
+          <table class="table border table-hover w-100">
   <thead className='table-dark'>
     <tr>
       <th scope="col">#</th>
@@ -208,29 +249,132 @@ import 'aos/dist/aos.css';
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>1</td>
-      <td>Hyderabad</td>
-      <td>Graphic Designer	</td>
-      <td>C#.Net,Asp.Net, Ms Sql Server	</td>
-      <td>4-5</td>
-      <td>5</td>
-      <td><button className='btn btn-primary'>more details</button></td>
+      <td><img src={displaying.new.url} alt='new' width={50}></img></td>
+      <td>{displaying.hyd}</td>
+      <td>{displaying.dataMiniHeading}</td>
+      <td>{displaying.data2},{displaying.data3},{displaying.data4}</td>
+      <td>{displaying.hydExp}</td>
+      <td>{displaying.hydPos}</td>
+      <td><button className='btn btn-primary'
+                          id='ds' onClick={showModal}  data-bs-toggle="modal" data-bs-target="#myModal"
+
+      >{displaying.button1}</button></td>
     </tr>
     <tr>
-      <th scope="row">1</th>
-      <td>2</td>
-      <td>Hyderabad</td>
+      <th scope="row">2</th>
+      <td><img src={displaying.new.url} alt='new' width={50}></img></td>
+      <td>{displaying.hyd}</td>
       <td>UI Developer</td>
-      <td>HTML,CSS,Javascript</td>
-      <td>3-4</td>
-      <td>3</td>
-      <td><button className='btn btn-primary'>more details</button></td>
+      <td>{displaying.dep1},{displaying.dep2},{displaying.dep3}</td>
+      <td>{displaying.hydExp}</td>
+      <td>{displaying.hydPos}</td>
+      <td><button className='btn btn-primary'
+                    id='dep' onClick={showModal}  data-bs-toggle="modal" data-bs-target="#myModal"
+
+      >{displaying.button1}</button></td>
     </tr>
     
   </tbody>
 </table>
         </div>
-      )}
+    
+
+
+        <div className='tableinfo' id='table2'>
+          <table class="table border table-hover w-100">
+  <thead className='table-dark'>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Job Type</th>
+      <th scope="col">Location</th>
+      <th scope="col">Job Name</th>
+      <th scope="col">Skills</th>
+      <th scope="col">Exp(Years)</th>
+      <th scope="col">No Of Positions</th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><img src={displaying.new.url} alt='new' width={50}></img></td>
+      <td>{displaying.banglore}</td>
+      <td>{displaying.serHeading}</td>
+      <td>{displaying.ser1},{displaying.ser3},{displaying.ser2}{displaying.ser4}</td>
+      <td>{displaying.hydExp}</td>
+      <td>{displaying.hydPos}</td>
+      <td><button className='btn btn-primary'
+                          id='ser' onClick={showModal}  data-bs-toggle="modal" data-bs-target="#myModal"
+
+      >{displaying.button1}</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><img src={displaying.new.url} alt='new' width={50}></img></td>
+      <td>{displaying.banglore}</td>
+      <td>{displaying.catalogHeading}</td>
+      <td>{displaying.cata1},{displaying.cata2},{displaying.cata3}</td>
+      <td>{displaying.hydExp}</td>
+      <td>{displaying.hydPos}</td>
+      <td><button className='btn btn-primary'
+                    id='cata' onClick={showModal}  data-bs-toggle="modal" data-bs-target="#myModal"
+      >{displaying.button1}</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+        </div>
+      
+       
+      
+        <div className='tableinfo' id='table3'>
+          <table class="table border table-hover w-100">
+  <thead className='table-dark'>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Job Type</th>
+      <th scope="col">Location</th>
+      <th scope="col">Job Name</th>
+      <th scope="col">Skills</th>
+      <th scope="col">Exp(Years)</th>
+      <th scope="col">No Of Positions</th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><img src={displaying.new.url} alt='new' width={50}></img></td>
+      <td>{displaying.usa}</td>
+      <td>{displaying.awsHeading}</td>
+      <td>{displaying.aws1},{displaying.aws2},{displaying.aws3}</td>
+      <td>{displaying.hydExp}</td>
+      <td>{displaying.hydPos}</td>
+      <td><button className='btn btn-primary'
+                          id='aws' onClick={showModal}  data-bs-toggle="modal" data-bs-target="#myModal"
+
+      >{displaying.button1}</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>2</td>
+      <td>{displaying.usa}</td>
+      <td>{displaying.appHeading}</td>
+      <td>{displaying.app1},{displaying.app2},{displaying.app3}</td>
+      <td>{displaying.hydExp}</td>
+      <td>{displaying.hydPos}</td>
+      <td><button className='btn btn-primary'
+                    id='app' onClick={showModal}  data-bs-toggle="modal" data-bs-target="#myModal"
+
+      >{displaying.button1}</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+        </div>
+    
        
 
             {/* <div className='d-flex m-2  ' data-aos="slide-right" data-aos-duration="2000" data-aos-once='true'>
@@ -336,18 +480,18 @@ import 'aos/dist/aos.css';
           </div>
           <div className='d-flex pt-5 footer-details'>
               <div className='col-3'>
-                <img src={displaying.footerImg.url} alt='no-footer' width='95%' height='30%'/>
+                <img src={displaying.footerImg.url} alt='no-footer' width='95%' height='30%' className='footer-img'/>
                 <p className='footerContent'>{displaying.footerContent}</p>
               </div> 
               <div className='col-3'>
-                   <h5>{displaying.footerKey}</h5>
+                   <h5 className='footerkey'>{displaying.footerKey}</h5>
                    <div className='d-flex footerlist'>
                    <div>
                     <p><a href='/'><i class="bi bi-chevron-double-right"></i> {displaying.footerAbout}</a></p>
                     <p><a href='/'><i class="bi bi-chevron-double-right"></i> {displaying.footerService}</a></p>
                     <p><a href='/'><i class="bi bi-chevron-double-right"></i> {displaying.footerSolutions}</a></p>
                    </div>
-                   <div style={{marginLeft:"35px"}}>
+                   <div className='secondlist'>
                     <p><a href='/'><i class="bi bi-chevron-double-right"></i> {displaying.footerCsr}</a></p>
                     <p><a href='/'><i class="bi bi-chevron-double-right"></i> {displaying.footerCarrers}</a></p>
                     <p><a href='/'><i class="bi bi-chevron-double-right"></i> {displaying.footerContact}</a></p>
@@ -355,15 +499,17 @@ import 'aos/dist/aos.css';
                    </div>
               </div> 
               <div className='col-3'>
-                   <h5>{displaying.footerGet}</h5>
-                   <p><i class="bi bi-geo-alt-fill"></i>: {displaying.footerLocation}</p>
-                   <p><i class="bi bi-envelope-fill"></i>: {displaying.footerMail}</p>
+                   <h5 className='footerget'>{displaying.footerGet}</h5>
+                   <p className='plocation'><i class="bi bi-geo-alt-fill"></i>: {displaying.footerLocation}</p>
+                   <p className='pemail'><i class="bi bi-envelope-fill"></i>: {displaying.footerMail}</p>
               </div>
               <div className='col-3 footerimages'>
-                <h5>{displaying.footerFollow}</h5>
-                   <img src={displaying.footerFacebook.url} width={50} alt='no-facebook'></img>
-                   <img src={displaying.footerYoutube.url}  width={50} alt='no-youtube'></img>
-                   <img src={displaying.footerLink.url}     width={50}    alt='no-link'></img>
+                <h5 className='footerfollow'>{displaying.footerFollow}</h5>
+                <div className='footerimages1'>
+                   <img className='f1' src={displaying.footerFacebook.url} width={50} alt='no-facebook'></img>
+                   <img className='f1' src={displaying.footerYoutube.url}  width={50} alt='no-youtube'></img>
+                   <img className='f1' src={displaying.footerLink.url}     width={50}    alt='no-link'></img>
+                   </div>
               </div>
             </div>
       </div>
